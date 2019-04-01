@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "sass-playlist"
+		},
+		{
+			"path": "node-js-playlist"
+		},
+		{
+			"path": "css-animations-playlist"
+		},
+		{
+			"path": "vuex-playlist"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "css-animations-playlist"
+	}
+}
