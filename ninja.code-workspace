@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "vuex-playlist"
+		},
+		{
+			"path": "CSS-Variables"
 		}
 	],
 	"settings": {
