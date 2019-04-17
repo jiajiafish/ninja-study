@@ -14,6 +14,18 @@
 		},
 		{
 			"path": "CSS-Variables"
+		},
+		{
+			"path": "websockets-playlist"
+		},
+		{
+			"path": "object-oriented-js"
+		},
+		{
+			"path": "D:\\koa\\koa"
+		},
+		{
+			"path": "async-playlist"
 		}
 	],
 	"settings": {
