@@ -34,8 +34,8 @@ export default {
     //     //       product.price-=1
     //     //   });
     //     // 下面这个是直接提交commit
-    //     // this.$store.commit("reducePrice")
-    //     // 现在通过action来间接提交commit
+        // this.$store.commit("reducePrice")
+        // 现在通过action来间接提交commit
     //     this.$store.dispatch("reducePrice",payload)
     //   }
     ...mapActions([

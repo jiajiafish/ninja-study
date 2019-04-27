@@ -14,14 +14,19 @@ var io =socket(server);
 io.on('connection',function(socket){
     console.log('make socket connection',socket.id)
     socket.on('chat',function (data) {
-        outData ={'type': 'Reply',
-        'content': data.content,
-        "avatar": data.avatar,
-        "created_at": "刚刚                           "
-        }
+        outData =data
         console.log(outData)
         io.sockets.in(data.note_id).emit('chat',outData)
     })
+    // socket.on('uploadchat',function (data) {
+    //     outData ={'type': 'Reply',
+    //     'content': data.content,
+    //     "avatar": data.avatar,
+    //     "created_at": "刚刚                           "
+    //     }
+    //     console.log(outData)
+    //     io.sockets.in(data.note_id).emit('chat',outData)
+    // })
     socket.on('typing',function(data){
         socket.broadcast.emit('typing',data)
     })

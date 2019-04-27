@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "async-playlist"
+		},
+		{
+			"path": "react-playlist"
 		}
 	],
 	"settings": {
