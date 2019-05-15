@@ -1,0 +1,37 @@
+.box{
+    display: flex;
+    /* flex-direction: row-reverse;
+    flex-wrap: wrap-reverse; */
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.item{
+    background-color: #2ecc71;
+    padding:1px;
+    margin: 1px;
+}
+.df1{
+    height: 30px;
+    order: 3;
+}
+
+.df2{
+    height: 50px;
+    order: 2;
+}
+
+.df3{
+    height: 70px;
+    padding-top: 20px;
+    order: 1;
+
+}
+
+.middle{
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width: 100%;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.1/css/all.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #2ecc71;
+            height: 2000px;
+        }
+
+        .parent {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+        }
+
+        .son {
+            position: absolute;
+            top: 300px;
+            left: 400px;
+            right: 400px;
+            height: 500px;
+        }
+
+        .middle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .sm-menu {
+            position: absolute;
+            word-break: break-all;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="middle">
+        <div class="sm-menu">
+            <a href="#">a</a><a href="#">q</a><a href="#">a</a>
+            <a href="#">q</a>
+            <a href="#">a</a>
+            <a href="#">q</a>
+        
+        </div>
+
+
+    </div>
+    <div class="pasrent">
+        <div class='son'>son</div>
+    </div>
+    <div>
+
+        <div>
+
+            <li class="inline">3434</li>
+            <li class="inline">3434</li>
+            <li class="inline">3434</li>
+            <li class="inline">3434</li>
+            <li class="inline">3434</li>
+        </div>
+    </div>
+
+</body>
+
+</html>

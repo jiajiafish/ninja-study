@@ -1,19 +1,31 @@
 var React = require("react")
 var ReactDOM = require("react-dom")
 require("./css/index.css")
-import {Switch,BrowserRouter as Router ,Route,browserHistory} from 'react-router'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 var TodoItem = require('./todoItem')
 var AddItem = require("./addItem")
 var About = require("./about")
 
-var App = React.createClass({
+var App = React.Component({
     render:function () {
         return(
             <Router  history={browserHistory}>
-<Switch>
-                <Route path={'/'} component={TodoComponent}></Route>
-                <Route path={'/about'} component={About}></Route>
-                </Switch>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+            <li>
+              <Link to="/users/">Users</Link>
+            </li>
+          </ul>
+        </nav>
+                <Route path='/' component={TodoComponent}></Route>
+                <Route path='/about' component={About}></Route>
+
             </Router >
         )
     }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+    <style>
+        p,h2{
+
+        }
+        .header{
+
+        }
+    </style>
+</head>
+
+<body class="indigo">
+    <header class="indigo darken-1 section">
+        <h2 class="center white-text">wallet</h2>
+        <p class="flow-text grey-text center text-lighten-2">Month Money tracker for ninja</p>
+    </header>
+    <div class="container section">
+        <div class="row">
+            <div class="col s12 m6">
+                <form action="" class="card z-depth-3">
+                    <div class="card-content">
+
+
+                        <span class="card-title indigo-text">Add Item</span>
+                        <div class="input-field">
+                            <input type="text" id="cost">
+                            <label for="cost">Cost Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" id="name">
+                            <label for="name">Item Name</label>
+                        </div>
+                        <div class="input-field center">
+                            <button class="btn-large pink  white-text waves-effect waves-light">
+                                ADD ITem
+                            </button>
+                        </div>
+                        <div class="input-field center">
+                            <p class="red-text" id="error"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s12 m5 push-m1">
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9TZUgF9Fv9_UTcYhTdI9OoYq-e7eYKg0",
+    authDomain: "d3-firebase-9c97d.firebaseapp.com",
+    databaseURL: "https://d3-firebase-9c97d.firebaseio.com",
+    projectId: "d3-firebase-9c97d",
+    storageBucket: "d3-firebase-9c97d.appspot.com",
+    messagingSenderId: "945234188864",
+    appId: "1:945234188864:web:4ecf5062a972a56a"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db =firebase.firestore();
+  
+</script>
+    <script src="./d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="index.js"></script>
+    <script src="graph.js"></script>
+</body>
+
+</html>

@@ -18,15 +18,7 @@ io.on('connection',function(socket){
         console.log(outData)
         io.sockets.in(data.note_id).emit('chat',outData)
     })
-    // socket.on('uploadchat',function (data) {
-    //     outData ={'type': 'Reply',
-    //     'content': data.content,
-    //     "avatar": data.avatar,
-    //     "created_at": "刚刚                           "
-    //     }
-    //     console.log(outData)
-    //     io.sockets.in(data.note_id).emit('chat',outData)
-    // })
+
     socket.on('typing',function(data){
         socket.broadcast.emit('typing',data)
     })
@@ -34,7 +26,6 @@ io.on('connection',function(socket){
         console.log('加入房间ok'+data)
         socket.join(data)
         io.sockets.in(data).emit('system','hello,'+data+'加入了房间');
-        // socket.in(data).broadcast('')
         console.log(socket.rooms)
         console.log(io.sockets)
     })
