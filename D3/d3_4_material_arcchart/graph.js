@@ -43,20 +43,34 @@ const arcPath = d3.arc()
     .innerRadius(dims.radius / 2)
 console.log(arcPath(angles[0]))
 
-// update function
-const update=(data)=>{
-    console.log(data)
-    const paths = graph.selectAll('path')
-    .data(pie(data))
-    console.log(paths)
+const colour = d3.scaleOrdinal(d3['schemeSet3'])
 
+// update function
+const update = (data) => {
+    console.log('data', data)
+    colour.domain(data.map(
+        d => d.name
+    ))
+    const paths = graph.selectAll('path')
+        .data(pie(data))
+
+
+    paths.exit()
+        .transition().duration(750)
+        .attrTween('d', arcTweenExit)
+        .remove()
+
+    paths.attr('d', arcPath)
 
     paths.enter()
-    .append('path')
-    .attr('class','arc')
-    .attr('d',arcPath)
-    .attr('stroke','#fff')
-    .attr('stroke-width',3)
+        .append('path')
+        .attr('class', 'arc')
+        .attr('d', arcPath)
+        .attr('stroke', '#fff')
+        .attr('stroke-width', 3)
+        .attr('fill', d => colour(d.data.name))
+        .transition().duration(750)
+        .attrTween('d', arcTweenEnter)
 
 }
 
@@ -88,3 +102,36 @@ db.collection("expenses").onSnapshot(
         update(data)
     }
 )
+
+const arcTweenEnter = (d) => {
+    var i = d3.interpolate(d.endAngle, d.startAngle)
+
+    return function (t) {
+        d.startAngle = i(t);
+        return arcPath(d)
+    }
+}
+
+const arcTweenExit = (d) => {
+    var i = d3.interpolate(d.startAngle, d.endAngle)
+
+    return function (t) {
+        d.startAngle = i(t);
+        return arcPath(d)
+    }
+}
+
+// use function keyword to allow use of this
+
+function arcTweenUpdate(d){
+
+}
+
+// milestone=[
+//     [
+//         ['PFI',"2018-03-05"],
+//         ['DSI',"2018-03-05"],
+
+//     ],
+//     []
+// ]
