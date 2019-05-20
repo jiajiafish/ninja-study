@@ -1,0 +1,96 @@
+body{
+    background: #ddd;
+    margin: 0;
+    font-family: arial;
+    font-size: 1.2em;
+    color: #111;
+}
+
+.wrapper{
+    max-width: 960px;
+    margin: 10% auto;
+    text-align: center;
+    line-height: 2em;
+}
+
+.button{
+    border: 3px solid #111;
+    padding: 10px;
+    color: #111;
+    text-decoration: none;
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    /* opacity: 0; */
+    transform: scale(0) rotate(0deg);
+    transition: 0s;
+}
+
+#xmas-popup .popup-content{
+    width: 600px;
+    height: 600px;
+    background: #bbb;
+    margin: 100px auto;
+    position: relative;
+    border: 5px solid #fff;
+    transition: all 2s ease-in-out;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    background: #222;
+    border: 3px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    line-height: 0;
+    padding: 9px 0 11px;
+    width: 20px;
+    text-align: center;
+}
+
+.popup:target{
+    /* display: block; */
+    /* opacity: 1; */
+    transform: scale(1) rotate(360deg);
+
+}
+
+.px{
+    height: 10px;
+    width: 10px;
+    background: #1abc9c;
+}
+
+.em{
+    font-size: 20px;
+    height: 10em;
+    width: 10em;
+    background: #2ecc71;
+}
+
+.rem{
+    height: 10rem;
+    width: 10rem;
+    background: #e67e22;
+}
+
+.vw{
+    height: 10vw;
+    width: 10vw;
+    background: #8e44ad;
+}
+
+.vh{
+    height: 10vh;
+    width: 10vh;
+    background: #2c3e50;
+}
