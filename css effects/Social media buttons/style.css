@@ -23,7 +23,7 @@ body{
 }
 .btn i{
   line-height: 90px;
-  font-size: 26px;
+  font-size: 30px;
   transition: 0.2s linear;
 }
 .btn:hover i{

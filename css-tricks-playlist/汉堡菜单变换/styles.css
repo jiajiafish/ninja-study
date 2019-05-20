@@ -1,0 +1,45 @@
+body{
+margin: 0px;
+padding: 0px;
+background: #f1f1f1;
+
+}
+
+
+#burger-container{
+    position: relative;
+    margin: 200px auto;
+    width: 100px;
+    
+}
+
+#burger{
+    cursor: pointer;
+    display: block;
+}
+
+#burger-container span{
+    background: #111111;
+    display: block;
+    height: 10px;
+    width: 100px;
+    margin: 20px auto;
+    transition: all linear 0.25s  ;
+    top:0;
+    position: relative;
+}
+
+#burger-container.open span:nth-child(2),
+#burger-container.open span:nth-child(3){
+    opacity: 0;
+    width: 0px;
+}
+
+#burger-container.open span:nth-child(1){
+    transform: rotate(45deg);
+    top: 45px;
+}
+#burger-container.open span:nth-child(4){
+    transform: rotate(-45deg);
+    top: -45px;
+}

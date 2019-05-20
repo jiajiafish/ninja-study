@@ -38,9 +38,12 @@
 		},
 		{
 			"path": "D3"
+		},
+		{
+			"path": "css-tricks-playlist"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "css-animations-playlist"
+		"liveServer.settings.multiRootWorkspaceName": "css effects"
 	}
 }

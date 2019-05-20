@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #e74c3c;
+
+}
+.box{
+    padding: 40px;
+    width: 400px;
+    margin: 200px auto;
+    border: 2px solid white;
+    position: relative;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    top:-23px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background: #e74c3c;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum ullam necessitatibus pariatur 
+        iusto alias dolore accusantium mollitia, tenetur quod doloribus harum natus expedita iste fugit officia voluptatum consequatur in?
+
+    </div>
+</body>
+</html>
