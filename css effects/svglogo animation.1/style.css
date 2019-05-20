@@ -12,7 +12,7 @@ body{
 .center{
     margin: 10vh auto;
     text-align: center;
-    height: 300px;
+    height: 250px;
     width: 400px;
     background: #c0392b;
     border-radius: 3px;
@@ -22,11 +22,37 @@ body{
     animation: fadein 0.5s cubic-bezier(.44,.4,.36,1.24) forwards 3s;
 
 }
+.login-form{
+    position: absolute;
+    top:220px;
+    animation: filling 1.5s ease-out forwards 2.5s;
+    text-align: center;
+    width: 100%
+}
+.login-form input{
+    display: block;
+    width: 200px;
+    margin: 30px auto;
+    background: none;
+    border: 1px solid #ecf0f1;
+    padding: 8px 6px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.25s;
+}
+input::placeholder{
+    color: #680000;
+}
+.login-form input:focus{
+    width: 270px;
 
+}
 svg{
     position: absolute;
     left:0px;
-    top:-15px;
+    top:-30px;
     animation: filling 1.5s ease-out forwards 2.5s;
 }
 .path1{
