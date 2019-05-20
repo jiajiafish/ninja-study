@@ -6,75 +6,64 @@
 
 body{
     width: 100%;
-    height: 100vh;
-    background-color: rgb(231, 235, 255)
+    /* height: 100vh; */
+    background-color: #2c3e50
 }
-#logo{
+.center{
+    margin: 10vh auto;
+    text-align: center;
+    height: 300px;
+    width: 400px;
+    background: #c0392b;
+    border-radius: 3px;
+    position: relative;
+    box-shadow: 2px 2px 10px #2c100d;
+    overflow: hidden;
+    animation: fadein 0.5s cubic-bezier(.44,.4,.36,1.24) forwards 3s;
+
+}
+
+svg{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    animation: fill 0.5s forwards 3s;
+    left:0px;
+    top:-15px;
+    animation: filling 1.5s ease-out forwards 2.5s;
+}
+.path1{
+    stroke-dasharray: 650px;
+    stroke-dashoffset: 600px;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+    animation: line-anim 3s ease-out forwards ;
 }
 
-#logo path:nth-child(1){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards ;
-}
-#logo path:nth-child(2){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards 0.3s;
-}
-#logo path:nth-child(3){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards 0.6s;
-}
 
-#logo path:nth-child(4){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards;
-}
-
-#logo path:nth-child(5){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards;
-}
-#logo path:nth-child(6){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards;
-}
-#logo path:nth-child(7){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards;
-}
-#logo path:nth-child(8){
-    strfoke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards;
-}
-#logo path:nth-child(9){
-    stroke-dasharray: 150px;
-    stroke-dashoffset: 150px;
-    animation: line-anim 2s ease forwards;
-}
 @keyframes line-anim{
     to{
         stroke-dashoffset:0;
+    stroke-dasharray: 800px;
+    /* stroke-dasharray: 0px; */
     }
 }
 
-@keyframes fill{
+@keyframes filling{
     from{
         fill:transparent;
     }
     to{
-        fill: white;
+        fill: #ecf0f1;
+    }
+}
+
+@keyframes fadein{
+    from{
+        /* background:transparent; */
+    height: 300px;
+
+    }
+    to{
+        /* background: #c0392b; */
+    height: 700px;
+
     }
 }
