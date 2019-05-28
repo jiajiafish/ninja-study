@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="notifyMe('master wei','http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png','我在测试谷歌通知功能','http://www.mi.com/')">通知!</button>
+<script>
+var sum = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+        alert('Desktop notifications not available in your browser. Try Chromium.'); 
+        return;
+  }
+  if (Notification.permission !== "granted"){
+        Notification.requestPermission();
+  }
+});
+function notifyMe(title,iconurl,bodyContent,openurl) {
+    sum ++;
+    if (Notification.permission !== "granted"){
+        Notification.requestPermission();
+    }
+    else {
+        var notification = new Notification(title, {
+            icon: iconurl,
+            body: bodyContent+sum,
+        });
+        notification.onclick = function () {
+              window.open(openurl);      
+        };
+      }
+}
+</script>
+</body>
+</html>
