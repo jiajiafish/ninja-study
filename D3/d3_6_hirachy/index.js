@@ -35,6 +35,7 @@ const stratify = d3.stratify()
     .id(d => d.name)
     .parentId(d => d.parent)
 
+console.log(stratify(data))
 
 const rootNode = stratify(data)
     .sum(d => d.amount)

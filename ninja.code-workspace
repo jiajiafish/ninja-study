@@ -41,9 +41,13 @@
 		},
 		{
 			"path": "css-tricks-playlist"
+		},
+		{
+			"path": "C:\\Users\\digital\\Downloads\\data-ui-with-d3-firebase-lesson-100 (1)"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "D3"
+		"liveServer.settings.multiRootWorkspaceName": "D3",
+		"liveServer.settings.port": 5501
 	}
 }
