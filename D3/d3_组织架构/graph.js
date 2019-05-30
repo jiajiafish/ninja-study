@@ -63,7 +63,7 @@ const rootNode = stratify(data)
     .sum(d => d.amount)
 const treeData = tree(rootNode).descendants();
 const linkData = tree(rootNode).links();
-
+console.log(linkData)
 
 
 
@@ -92,10 +92,17 @@ link.enter()
     .attr('fill', 'none')
     .attr('stroke', '#aaa')
     .attr('stroke-width', 2)
-    .attr('d', d3.linkVertical()
-        .x(d => d.x)
-        .y(d => d.y)
-    );
+    .attr('d', line2);
+
+
+var line2 = d3.line()
+    .x(function (d) {
+        return d.source;
+    })
+    .y(function (d) {
+        return d.target;
+    })
+    .curve(d3.curveStep);
 
 
 
@@ -120,12 +127,16 @@ enterNodes.append('rect')
         return `translate(${-x}, -25)`
     });
 
-text = enterNodes.append('g')
-text.append("text")
-    .attr('text-anchor', 'middle')
-    .attr('dy', 5)
-    .attr('fill', 'white')
-    .text(d => d.data.name + (d.data.amount ? "__" + d.data.amount : ""))
+enterNodes
+    .append('div')
+    .style("position", 'absolute')
+    .style('left', 300)
+    .style('top', 200)
+    .style("width", 300)
+    .style('height', 200)
+    .style("background", "black")
+
+
 
 enterNodes.append('text')
     .attr('text-anchor', 'middle')
@@ -133,4 +144,14 @@ enterNodes.append('text')
     .attr('fill', 'white')
     .text(d => d.data.name + (d.data.amount ? "__" + d.data.amount : ""))
 
+// 直线生成器
 
+lineGenerator = d3.line()
+    .x(function (d) {
+        return d[0]
+    })
+    .y(function (d) {
+        return d[1];
+    });
+
+    
