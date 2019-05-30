@@ -20,6 +20,12 @@ const data = [
     { name: '岗位n', upper: '岗位D', amount: 2 },
     { name: '岗位m', upper: '岗位D', amount: 3 },
     { name: '岗位l', upper: '岗位D', amount: 5 },
+    { name: '岗位lm', upper: '岗位l', amount: 5 },
+    { name: '岗位ln', upper: '岗位l', amount: 5 },
+    { name: '岗位lb', upper: '岗位l', amount: 5 },
+    { name: '岗位mm', upper: '岗位m', amount: 5 },
+    { name: '岗位mn', upper: '岗位m', amount: 5 },
+    { name: '岗位mk', upper: '岗位m', amount: 5 },
 ];
 
 
@@ -34,11 +40,13 @@ const data = [
 // data.forEach(e => (map[e.sg_job_code] = map[e.sg_job_code]||[]).push(e));
 // down_stream = Object.values(map)
 // result = Object.keys(map).map((item,i)=>({"sg_job_code":item,"sg_upper_level":down_stream[i][0]['sg_upper_level'],'down_stream':down_stream[i],"count":down_stream[i].length}))
-width = window.innerWidth
-height = window.innerWidth
-const svg = d3.select('.canvas').select("svg")
-    .attr('width', width)
-    .attr('height', height)
+width = 2000
+height = window.innerHeight
+console.log(data.length)
+const svg = d3.select('.canvas')
+    .append("svg")
+    .attr('width', width + 100)
+    .attr('height', height + 100)
     .attr('style', "background:#f1f1f1")
 
 const graph = svg.append('g')
@@ -49,22 +57,80 @@ const stratify = d3.stratify()
     .parentId(d => d.upper)
 
 const tree = d3.tree()
-    .size([width, height]);
+    .size([data.length * 250, height * 2]);
 
 const rootNode = stratify(data)
     .sum(d => d.amount)
 const treeData = tree(rootNode).descendants();
-
-console.log(treeData)
-
+const linkData = tree(rootNode).links();
 
 
-console.log(tree(rootNode))
-const link = graph.selectAll('circle')
-    .data(treeData.links())
-    .enter()
+
+
+const nodes = graph.selectAll('.node')
+    .data(treeData)
+
+const link = graph.selectAll('.link')
+    .data(linkData)
+
+svg.call(d3.zoom()
+    .scaleExtent([1 / 4, 8])
+    .on("zoom", zoomed));
+
+function zoomed() {
+    graph.attr("transform", d3.event.transform);
+}
 
 console.log(link)
 
+const colour = d3.scaleOrdinal(['#e8e8e8', '#5588a3', '#145374', '#00334e']);
+
+link.enter()
+    .append('path')
+    .transition().duration(300)
+    .attr('class', 'link')
+    .attr('fill', 'none')
+    .attr('stroke', '#aaa')
+    .attr('stroke-width', 2)
+    .attr('d', d3.linkVertical()
+        .x(d => d.x)
+        .y(d => d.y)
+    );
+
+
+
+const enterNodes = nodes.enter()
+    .append('g')
+    .attr('class', 'node')
+    .attr('transform', d => `translate(${d.x}, ${d.y})`);
+
+
+
+// append rects to enter nodes
+enterNodes.append('rect')
+    .attr('fill', d => colour(d.data.upper))
+    .attr('stroke', '#555')
+    .attr('stroke-width', 1)
+    .attr('width', d => d.data.name.length * 60)
+    .attr('height', 100)
+    .attr('rx', 5)
+    .attr('ry', 5)
+    .attr('transform', (d, i, n) => {
+        let x = (d.data.name.length * 30);
+        return `translate(${-x}, -25)`
+    });
+
+text = enterNodes.append('g')
+text.append("text")
+    .attr('text-anchor', 'middle')
+    .attr('dy', 5)
+    .attr('fill', 'white')
+    .text(d => d.data.name + (d.data.amount ? "__" + d.data.amount : ""))
+
+enterNodes.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', 5)
+    .attr('fill', 'white')
+    .text(d => d.data.name + (d.data.amount ? "__" + d.data.amount : ""))
 
 
