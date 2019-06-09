@@ -21,7 +21,6 @@
 					"width": 700,
 					"height": 500,
 				});
-
 			//
 			svg.append("g").attr('transform', 'translate(350, 250)')
 				.append('text')
@@ -29,7 +28,6 @@
 					x: 0,
 					y: 0
 				});
-
 			var num = 99.999;
 
 			var arr = ["integer", "exponent", "fixed", "percentage"]
@@ -40,8 +38,9 @@
 					.transition().duration(400)
 					.delay(i*500)
 					.attr('transform', 'rotate(' + i*45 + ')')
-					.text(d+format(num));
+					.text(d3.format(num));
 			}
+			
 		</script>
 	</body>
 </html>

@@ -8,7 +8,7 @@
 	<body>
 		<input type="text" id="text-id" /><br>
 		<input type="checkbox" id="checkbox-id" />.property<br>
-		
+		<div class="canvas"></div>
 		<script type="text/javascript">
 			
 			d3.select('#text-id')
@@ -18,6 +18,16 @@
 		
 			d3.select('#checkbox-id')
 				.property('checked', true);	//设置复选框的checked属性
+			var canvas =d3.select('.canvas')
+			console.log(canvas) 
+			var data = ['jiaxiaole',"jiaxiaohuan"]
+			canvas.selectAll('child')
+			.data(data)
+			.enter()
+			.append("input")
+			.attr("class",d=>d)
+			.property("id",d=>d)
+			.attr("type","checkbox")
 		</script>
 	</body>
 </html>
