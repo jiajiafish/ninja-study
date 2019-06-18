@@ -113,7 +113,6 @@ const enterNodes = nodes.enter()
 
 
 
-// append rects to enter nodes
 enterNodes.append('rect')
     .attr('fill', d => colour(d.data.upper))
     .attr('stroke', '#555')

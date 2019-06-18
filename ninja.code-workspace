@@ -47,6 +47,9 @@
 		},
 		{
 			"path": "graphql-playlist"
+		},
+		{
+			"path": "grunt-playlist"
 		}
 	],
 	"settings": {
