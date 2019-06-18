@@ -50,6 +50,9 @@
 		},
 		{
 			"path": "grunt-playlist"
+		},
+		{
+			"path": "gulp-playlist"
 		}
 	],
 	"settings": {
