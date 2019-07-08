@@ -53,6 +53,12 @@
 		},
 		{
 			"path": "gulp-playlist"
+		},
+		{
+			"path": "puppeteer"
+		},
+		{
+			"path": "context"
 		}
 	],
 	"settings": {
